@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: exam-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5433/examdb   # đổi 5433
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect  # thêm dòng này để Hibernate khỏi kêu về Dialect khi DB chưa sẵn
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework: info
