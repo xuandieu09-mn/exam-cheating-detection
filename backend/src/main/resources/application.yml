@@ -13,10 +13,17 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect  # thêm dòng này để Hibernate khỏi kêu về Dialect khi DB chưa sẵn
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  main:
+    banner-mode: "off"
 
 server:
   port: 8080
 
 logging:
   level:
-    org.springframework: info
+    root: INFO
+    org.springframework.jdbc.core: DEBUG  # thấy SQL và binding
+    org.springframework.web: INFO
